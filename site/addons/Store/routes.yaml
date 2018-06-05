@@ -1,0 +1,10 @@
+routes:
+  amazon:
+    uses: index
+    as: amazon.index
+  saugroboter:
+    uses: getSaugroboter
+    as: amazon.saugroboter
+  maehroboter:
+    uses: getMaehroboter
+    as: amazon.maehroboter

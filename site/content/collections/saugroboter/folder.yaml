@@ -1,0 +1,7 @@
+title: Saugroboter
+fieldset: saugroboter
+columns:
+  - title
+  - amazon_id
+  - slug
+  - EAN

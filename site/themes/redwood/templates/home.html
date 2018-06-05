@@ -1,0 +1,27 @@
+<section class="regular">
+
+    <h1 class="special centered">
+        <small>Roboterworld</small>
+        
+    </h1>
+
+<!--	<article class="list">
+		{{ collection:blog limit="3" scope="tag" }}
+			{{ partial:block }}
+		{{ /collection:blog }}
+	</article>
+-->
+  <div class="tiles">
+  {{ collection:saugroboter limit="6" }}
+        <a href="{{ amazon_product_url }}" class="item">
+            <div class="image" style="background-image: url('{{ photo }}');">
+                <h3 class="caption">{{ title }}</h3>
+            </div>
+        </a>
+        {{ /collection:saugroboter }}
+ </div>
+    <div class="read-more">
+        <a href="{{ link to='saugroboter' }}">All products</a>
+    </div>
+
+</section>

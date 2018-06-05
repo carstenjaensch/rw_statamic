@@ -1,0 +1,49 @@
+locales:
+  de:
+    full: de_de
+    name: Deutsch
+    url: https://rw.prodigio.de/
+  en:
+    full: en_UK
+    name: English
+    url: https://rw.prodigio.de/en
+timezone: Europe/Berlin
+date_format: F jS, Y
+default_extension: md
+use_https: true
+filesystems:
+  content:
+    driver: local
+    root: site/content
+  storage:
+    driver: local
+    root: site/storage
+  users:
+    driver: local
+    root: site/users
+  themes:
+    driver: local
+    root: site/themes
+    url: /site/themes
+app_key: YoqVkt0QXtMfNMNDS12OcspOmBqbClVd
+redactor:
+  -
+    name: Standard
+    settings:
+      buttons:
+        - formatting
+        - bold
+        - italic
+        - link
+        - unorderedlist
+        - orderedlist
+        - html
+  -
+    name: Basic
+    settings:
+      buttons:
+        - bold
+        - italic
+send_powered_by_header: true
+ensure_unique_ids: true
+yaml_parser: spyc

@@ -1,0 +1,34 @@
+title: Saugroboter
+create_title: New
+hide: true
+fields:
+  title:
+    type: text
+    display: Title
+  amazon_id:
+    display: Amazon Product ID
+    type: text
+  amazon_product_url:
+    display: Amazon Product URL
+    type: text
+  EAN:
+    display: EAN
+    type: text
+  Brand:
+    display: Brand
+    type: text
+  photo:
+    display: Medium Image URL
+    type: text
+  amazon_price:
+    display: Amazon product price
+    type: text
+  amazon_offer_price:
+    display: Amazon offer product price
+    type: text
+  rw_price:
+    display: Roboterwelt price
+    type: text
+  rw_offer_price:
+    display: Roboterwelt offer price
+    type: text
