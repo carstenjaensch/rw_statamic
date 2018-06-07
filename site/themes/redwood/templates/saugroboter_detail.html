@@ -1,0 +1,18 @@
+<section class="regular">
+
+	<header>
+		<div class="meta clearfix">
+		</div>
+		<h1>{{ title }}</h1>
+		{{ sub_title wrap="h2" }}
+	</header>
+
+	<div class="content">
+
+    {{ detail_field }}
+      {{ partial src="sets/{type}" }}
+    {{ /detail_field }}
+
+	</div>
+
+</section>

@@ -1,0 +1,34 @@
+
+{{ if amazon_offer_price || amazon_price}}
+
+  <div> Bei Amazon für
+    {{ if amazon_offer_price }}
+      <strike>{{ amazon_price divide="100"  }}.-</strike> {{ amazon_offer_price divide="100"  }}
+    {{ else }}
+      {{ amazon_price  divide="100" }}
+    {{ /if}}
+    .- Euro <a href="{{ amazon_product_url }}" class="item">kaufen</a>
+  </div>
+{{ /if }}
+{{ if otto_offer_price || otto_price}}
+
+  <div> Bei Otto für
+    {{ if otto_offer_price }}
+      <strike>{{ otto_price divide="100"  }}.-</strike> {{ otto_offer_price divide="100"  }}
+    {{ else }}
+      {{ otto_price  divide="100" }}
+    {{ /if}}
+    .- Euro <a href="{{ otto_product_url }}" class="item">kaufen</a>
+  </div>
+{{ /if }}
+{{ if conrad_offer_price || conrad_price}}
+
+  <div> Bei Conrad für
+    {{ if conrad_offer_price }}
+      <strike>{{ conrad_price divide="100"  }}.-</strike> {{ conrad_offer_price divide="100"  }}
+    {{ else }}
+      {{ conrad_price  divide="100" }}
+    {{ /if}}
+    .- Euro <a href="{{ conrad_product_url }}" class="item">kaufen</a>
+  </div>
+{{ /if }}

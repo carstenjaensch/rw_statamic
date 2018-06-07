@@ -1,0 +1,13 @@
+title: Price
+create_title: New abstract price
+hide: true
+fields:
+  product_url:
+    display:  Product URL
+    type: text
+  price:
+    display:  product price
+    type: text
+  offer_price:
+    display:  offer product price
+    type: text

@@ -1,0 +1,16 @@
+title: Amazon
+create_title: New Amazon Price
+hide: true
+fields:
+  amazon_id:
+    display: Amazon Product ID
+    type: text
+  amazon_product_url:
+    display: Amazon Product URL
+    type: text
+  amazon_price:
+    display: Amazon product price
+    type: text
+  amazon_offer_price:
+    display: Amazon offer product price
+    type: text

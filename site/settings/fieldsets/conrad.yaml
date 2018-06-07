@@ -1,0 +1,16 @@
+title: Conrad
+create_title: New Conrad Price
+hide: true
+fields:
+  conrad_id:
+    display: Conrad Product ID
+    type: text
+  conrad_product_url:
+    display:  Product URL
+    type: text
+  conrad_price:
+    display:  product price
+    type: text
+  conrad_offer_price:
+    display:  offer product price
+    type: text

@@ -5,3 +5,4 @@ columns:
   - amazon_id
   - slug
   - EAN
+template: saugroboter_detail

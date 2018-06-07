@@ -1,34 +1,115 @@
 title: Saugroboter
 create_title: New
 hide: true
-fields:
-  title:
-    type: text
-    display: Title
-  amazon_id:
-    display: Amazon Product ID
-    type: text
-  amazon_product_url:
-    display: Amazon Product URL
-    type: text
-  EAN:
-    display: EAN
-    type: text
-  Brand:
-    display: Brand
-    type: text
-  photo:
-    display: Medium Image URL
-    type: text
-  amazon_price:
-    display: Amazon product price
-    type: text
-  amazon_offer_price:
-    display: Amazon offer product price
-    type: text
-  rw_price:
-    display: Roboterwelt price
-    type: text
-  rw_offer_price:
-    display: Roboterwelt offer price
-    type: text
+
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        type: text
+        display: Title
+      Brand:
+        display: Brand
+        type: text
+      EAN:
+        display: EAN
+        type: text
+  amazon:
+    display: Amazon
+    fields:
+      amazonP:
+        type: partial
+        fieldset: amazon
+  conrad:
+    display: Conrad
+    fields:
+      conradP:
+        type: partial
+        fieldset: conrad
+  otto:
+    display: Otto
+    fields:
+      ottoP:
+        type: partial
+        fieldset: otto
+  # amazon:
+  #   display: Amazon
+  #   fields:
+  #     amazon_id:
+  #       display: Amazon Product ID
+  #       type: text
+  #     amazon_product_url:
+  #       display: Amazon Product URL
+  #       type: text
+  #     amazon_price:
+  #       display: Amazon product price
+  #       type: text
+  #     amazon_offer_price:
+  #       display: Amazon offer product price
+  #       type: text
+  price:
+    display: RW Price
+    fields:
+      rw_price:
+        display: Roboterwelt price
+        type: text
+      rw_offer_price:
+        display: Roboterwelt offer price
+        type: text
+  assets:
+    display: Assets
+    fields:
+      photo:
+        display: Amazon Medium Image URL
+        type: text
+      images:
+        type: assets
+        display: Images
+        container: main
+        folder: products
+      external_images:
+        display: Additional external_pictures
+        type: array
+      video:
+        diyplay: Youtube Video URL
+        type: array
+  detail:
+    display: Detail Page Content
+    fields:
+      detail_field:
+        type: replicator
+        display: Detail Page Content
+        sets:
+          text:
+            display: Text
+            fields:
+              text:
+                type: markdown
+          image:
+            display: Image
+            fields:
+              photo:
+                type: assets
+                container: products
+                max_files: 1
+              caption:
+                type: text
+          video:
+            display: Youtube video
+            fields:
+              video:
+                type: video
+                display: Video URL
+          affiliate_checkout:
+            display: Affiliate
+            fields:
+              affiliate_checkout: Affiliate checkout
+                type: text
+                mode: submit
+          rw_checkout:
+            display: jetzt kaufen
+            fields:
+              rw_checkout: Roboterwelt checkout
+                type: text
+                mode: submit
