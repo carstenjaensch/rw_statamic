@@ -107,8 +107,8 @@ class StoreController extends Controller
                                   'photo' => $photo,
                                   "amazon_product_url" => $item["DetailPageURL"],
                                   "Brand" => $attributes['Brand'],
-                                  "amazon_price" => array_get($item, 'OfferSummary.LowestNewPrice.Amount'),
-                                  "amazon_offer_price" => array_get($attributes,'ListPrice.Amount')
+                                  "amazon_offer_price" => array_get($item, 'OfferSummary.LowestNewPrice.Amount'),
+                                  "amazon_price" => array_get($attributes,'ListPrice.Amount')
                                 ])
                           ->date(date("Y-m-d"));
 
@@ -117,6 +117,26 @@ class StoreController extends Controller
             } catch (\Exception $e) {
                  echo 'Caught exception: ',  $e->getMessage(), "\n";
             }
+
+     } else {
+       try {
+         $entry = Entry::whereSlug(str_slug($attributes['Title']), $collection)
+//dd($factory);
+          // ->collection($collection)
+           ->set('title' , $attributes['Title'])
+           ->set('amazon_id' , $item['ASIN'])
+           ->set('photo' , $photo)
+           ->set("amazon_product_url" , $item["DetailPageURL"])
+           ->set("Brand" , $attributes['Brand'])
+           ->set("amazon_offer_price" , array_get($item, 'OfferSummary.LowestNewPrice.Amount'))
+           ->set("amazon_price" , array_get($attributes,'ListPrice.Amount'));
+           
+           $entry->save();
+
+       } catch (\Exception $e) {
+          echo 'Caught exception: ',  $e->getMessage(), "\n";
+       };
+
 
      };
 

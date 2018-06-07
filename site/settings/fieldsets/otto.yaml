@@ -1,0 +1,16 @@
+title: Otto
+create_title: New Otto Price
+hide: true
+fields:
+  otto_id:
+    display: Otto Product ID
+    type: text
+  otto_product_url:
+    display:  Product URL
+    type: text
+  otto_price:
+    display:  product price
+    type: text
+  otto_offer_price:
+    display:  offer product price
+    type: text

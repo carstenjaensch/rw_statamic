@@ -1,0 +1,16 @@
+{{ if rw_offer_price || rw_price}}
+<form id="basket">
+  <div><b> Roboterwelt Preis
+    {{ if rw_offer_price }}
+      {{ rw_offer_price divide="100"  }}
+    {{ else }}
+      {{ rw_price  divide="100" }}
+    {{ /if}}
+    .- Euro</b>
+  </div>
+  <button id="addToBasket" type="submit">
+    <i>&nbsp;</i>
+    in der Warenkorb
+  </button>
+</form>
+{{ /if }}
