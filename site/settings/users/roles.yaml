@@ -2,3 +2,17 @@ d32e14fb-08c9-44c2-aaf8-21200852bafd:
   title: Admin
   permissions:
     - super
+0713a68d-3ccd-4766-a17e-cc8d095e7b1e:
+  title: product Editor
+  slug: product-edit
+  permissions:
+    - cp:access
+    - content:view_drafts_on_frontend
+    - resolve_duplicates
+    - collections:saugroboter:view
+    - collections:saugroboter:edit
+    - collections:saugroboter:create
+    - collections:saugroboter:delete
+    - assets:main:view
+    - assets:main:edit
+    - assets:main:create
