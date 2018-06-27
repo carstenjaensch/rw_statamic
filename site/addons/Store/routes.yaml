@@ -5,6 +5,9 @@ routes:
   saugroboter:
     uses: getSaugroboter
     as: amazon.saugroboter
+  export:
+    uses: export
+    as: amazon.export
   maehroboter:
     uses: getMaehroboter
     as: amazon.maehroboter

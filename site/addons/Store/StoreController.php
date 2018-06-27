@@ -5,7 +5,13 @@ namespace Statamic\Addons\Store;
 use Statamic\Extend\Controller;
 use Statamic\API\Collection;
 use Statamic\API\Entry;
-use Illuminate\Support\Carbon;
+//use Illuminate\Support\Carbon;
+
+use Carbon\Carbon;
+use League\Csv\Writer;
+use SplTempFileObject;
+use Illuminate\Http\Response;
+
 
 //https://github.com/kawax/laravel-amazon-product-api
 use AmazonProduct;
@@ -31,6 +37,71 @@ class StoreController extends Controller
         $this->getAmazonCategory('saugroboter', 1);
         return $this->view('saugroboter');
     }
+    /**
+     * Maps to your route definition in routes.yaml
+     *
+     * @return mixed
+     */
+    public function export()
+    {
+
+      $handle = 'saugroboter';
+      $filename = slugify("{$handle}-".Carbon::now()->timestamp);
+      //$filename = slugify("{$handle}-".get_date());
+
+      $this->writer = Writer::createFromFileObject(new SplTempFileObject);
+
+      $this->insertHeaders($handle);
+      $this->insertData($handle);
+      $this->view('saugroboter');
+      return response((string) $this->writer, 200, [
+          'Content-type' => 'text/csv',
+          'Content-Disposition' => "attachment; filename={$filename}.csv",
+      ]);
+
+    }
+    // Creates and inserts CSV Header based on collection fieldset
+    private function insertHeaders($handle)
+    {
+        $header_data = array("title", "Brand", "EAN", "rw_price", "rw_offer_price", "photo");;
+
+        $this->csv_header = $header_data;
+
+        $this->writer->insertOne($header_data);
+    }
+    // Creates content based on fieldset fields
+    private function insertData($handle)
+    {
+        $header_data = $this->csv_header;
+
+        $collectiondata = Entry::whereCollection($handle);
+
+        $data = collect($collectiondata)->map(function ($entry) use ($header_data) {
+            $ret = [];
+            $entry = $entry->toArray();
+
+            foreach ($header_data as $key => $value) {
+                if (array_key_exists($value, $entry)) {
+                    // convert entry array to pipe delimited string
+                    $entry_value = '';
+                    if (is_array($entry[$value])) {
+                        $entry_value = implode('|', $entry[$value]);
+                    } else {
+                        $entry_value = $entry[$value];
+                    }
+
+                    $ret[] = $entry_value;
+                } else {
+                    $ret[] = '';
+                }
+            }
+
+            return $ret;
+        })->toArray();
+
+        $this->writer->insertAll($data);
+    }
+
     /**
      * Maps to your route definition in routes.yaml
      *
@@ -110,7 +181,8 @@ class StoreController extends Controller
                                   "amazon_offer_price" => array_get($item, 'OfferSummary.LowestNewPrice.Amount'),
                                   "amazon_price" => array_get($attributes,'ListPrice.Amount')
                                 ])
-                          ->date(date("Y-m-d"));
+                          //->date(date("Y-m-d"))
+                          ->date(Carbon::now()->timestamp);
 
                 $entry = $factory->get();
                 $entry->save();
@@ -130,7 +202,7 @@ class StoreController extends Controller
            ->set("Brand" , $attributes['Brand'])
            ->set("amazon_offer_price" , array_get($item, 'OfferSummary.LowestNewPrice.Amount'))
            ->set("amazon_price" , array_get($attributes,'ListPrice.Amount'));
-           
+
            $entry->save();
 
        } catch (\Exception $e) {

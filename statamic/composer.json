@@ -31,7 +31,7 @@
         "funkjedi/composer-include-files": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "symfony/yaml": "^3.0",
-        "revolution/laravel-amazon-product-api": "^1.0"
+        "goellner/statamic-exportit": "*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

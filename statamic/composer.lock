@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e38e7f9f2e5ef4a35a0fcc27076b45a0",
+    "content-hash": "ba5148f14bf966ebb279aa01d8df3ba7",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -410,60 +410,6 @@
             "time": "2015-11-06T14:35:42+00:00"
         },
         {
-            "name": "exeu/apai-io",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Exeu/apai-io.git",
-                "reference": "ba5bb754f59f744e927a3bdf4b339fa2a0afb44f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Exeu/apai-io/zipball/ba5bb754f59f744e927a3bdf4b339fa2a0afb44f",
-                "reference": "ba5bb754f59f744e927a3bdf4b339fa2a0afb44f",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~6.0",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ApaiIO\\": "src/ApaiIO"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jan Eichhorn",
-                    "email": "exeu65@googlemail.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Dejan Spasic",
-                    "email": "dejan.spasic@bitweise.biz",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Amazon Product Advertising PHP Library",
-            "homepage": "https://github.com/Exeu/apai-io",
-            "keywords": [
-                "ECS",
-                "Product Advertising",
-                "amazon",
-                "products",
-                "rest"
-            ],
-            "time": "2018-02-12T10:44:56+00:00"
-        },
-        {
             "name": "funkjedi/composer-include-files",
             "version": "1.0.0",
             "source": {
@@ -506,6 +452,23 @@
                 "composer"
             ],
             "time": "2016-12-23T18:15:30+00:00"
+        },
+        {
+            "name": "goellner/statamic-exportit",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../site/addons/Exportit",
+                "reference": "0cb94655cebac54806d5eaf458645717b9801d8a",
+                "shasum": null
+            },
+            "require": {
+                "league/csv": "^8.0"
+            },
+            "type": "library",
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2484,63 +2447,6 @@
             "time": "2016-03-09T05:03:14+00:00"
         },
         {
-            "name": "revolution/laravel-amazon-product-api",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kawax/laravel-amazon-product-api.git",
-                "reference": "110cf930c5cc445e0987fe607dcffc457c6b1092"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-amazon-product-api/zipball/110cf930c5cc445e0987fe607dcffc457c6b1092",
-                "reference": "110cf930c5cc445e0987fe607dcffc457c6b1092",
-                "shasum": ""
-            },
-            "require": {
-                "exeu/apai-io": "^2.1",
-                "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "5.*",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "6.*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Revolution\\Amazon\\ProductAdvertising\\Providers\\AmazonProductServiceProvider"
-                    ],
-                    "aliases": {
-                        "AmazonProduct": "Revolution\\Amazon\\ProductAdvertising\\Facades\\AmazonProduct"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Revolution\\Amazon\\ProductAdvertising\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "kawax",
-                    "email": "kawaxbiz@gmail.com"
-                }
-            ],
-            "description": "Amazon Product Advertising API for Laravel",
-            "keywords": [
-                "amazon",
-                "laravel"
-            ],
-            "time": "2018-05-16T03:49:56+00:00"
-        },
-        {
             "name": "socialiteproviders/manager",
             "version": "v2.2.1",
             "source": {
@@ -3820,6 +3726,60 @@
             "time": "2015-06-14T21:17:01+00:00"
         },
         {
+            "name": "exeu/apai-io",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Exeu/apai-io.git",
+                "reference": "ba5bb754f59f744e927a3bdf4b339fa2a0afb44f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Exeu/apai-io/zipball/ba5bb754f59f744e927a3bdf4b339fa2a0afb44f",
+                "reference": "ba5bb754f59f744e927a3bdf4b339fa2a0afb44f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApaiIO\\": "src/ApaiIO"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Eichhorn",
+                    "email": "exeu65@googlemail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Dejan Spasic",
+                    "email": "dejan.spasic@bitweise.biz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Amazon Product Advertising PHP Library",
+            "homepage": "https://github.com/Exeu/apai-io",
+            "keywords": [
+                "ECS",
+                "Product Advertising",
+                "amazon",
+                "products",
+                "rest"
+            ],
+            "time": "2018-02-12T10:44:56+00:00"
+        },
+        {
             "name": "fzaninotto/faker",
             "version": "v1.6.0",
             "source": {
@@ -4730,6 +4690,63 @@
             "time": "2016-12-08T20:27:08+00:00"
         },
         {
+            "name": "revolution/laravel-amazon-product-api",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kawax/laravel-amazon-product-api.git",
+                "reference": "110cf930c5cc445e0987fe607dcffc457c6b1092"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kawax/laravel-amazon-product-api/zipball/110cf930c5cc445e0987fe607dcffc457c6b1092",
+                "reference": "110cf930c5cc445e0987fe607dcffc457c6b1092",
+                "shasum": ""
+            },
+            "require": {
+                "exeu/apai-io": "^2.1",
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "5.*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Revolution\\Amazon\\ProductAdvertising\\Providers\\AmazonProductServiceProvider"
+                    ],
+                    "aliases": {
+                        "AmazonProduct": "Revolution\\Amazon\\ProductAdvertising\\Facades\\AmazonProduct"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Revolution\\Amazon\\ProductAdvertising\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "Amazon Product Advertising API for Laravel",
+            "keywords": [
+                "amazon",
+                "laravel"
+            ],
+            "time": "2018-05-16T03:49:56+00:00"
+        },
+        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.1",
             "source": {
@@ -5299,7 +5316,8 @@
         "league/flysystem-ziparchive": 20,
         "mustangostang/spyc": 20,
         "michelf/php-smartypants": 20,
-        "netcarver/textile": 20
+        "netcarver/textile": 20,
+        "goellner/statamic-exportit": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
